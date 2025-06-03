@@ -1,0 +1,109 @@
+/* Basic Reset and Fonts */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #386fa7;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #2c5282;
+  font-weight: 600;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+  background: #2b6cb0;
+  padding: 20px 0;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 20px;
+  color: rgb(56, 29, 209);
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #cbd5e0;
+}
+
+/* Section & Cards */
+.section {
+  margin: 40px 0;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+}
+
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.btn {
+  background: #2b6cb0;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #196ed6;
+}
+
+/* Summary content */
+.summary-content ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.summary-content li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2b6cb0;
+  color: white;
+}

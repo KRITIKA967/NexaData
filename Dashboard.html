@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="Dashboard.css" />
+  <script defer src="Dashboard.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo">🛠️ Admin Dashboard</div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="Data Analysis.html">Data Analysis</a>
+        <a href="report.html">View Report</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="dashboard-section card">
+      <h2>👥 User Management</h2>
+      <div class="user-tools">
+        <input type="text" placeholder="Enter username" id="newUser" />
+        <button class="btn" onclick="addUser()">Add User</button>
+      </div>
+      <ul id="userList" class="user-list">
+        <!-- User rows added via JS -->
+      </ul>
+    </section>
+
+    <section class="dashboard-section card">
+      <h2>📊 Storage & Processing Usage</h2>
+      <div class="progress">
+        <div class="progress-bar" style="width: 45%;">45% Used</div>
+      </div>
+      <p>Total Storage: 5GB | Used: 2.25GB</p>
+    </section>
+
+    <section class="dashboard-section card">
+      <h2>🤖 AI API Access</h2>
+      <label>
+        <input type="checkbox" id="aiToggle" checked /> Enable AI Insights
+      </label>
+      <p>Rate Limit: 100 requests/day</p>
+    </section>
+  </main>
+
+</body>
+</html>

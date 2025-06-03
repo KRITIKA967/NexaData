@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stored Data</title>
+  <link rel="stylesheet" href="stored-data.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <h1 class="logo">🗂️ Stored Data</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Stored Data Section -->
+  <section class="container section glass-container">
+    <h2 class="section-title">🗂️ Stored Excel Files</h2>
+    <p class="section-subtitle">Access your uploaded files and manage datasets from your personalized dashboard.</p>
+
+    <div class="file-table glass-table">
+      <table>
+        <thead>
+          <tr>
+            <th>📄 File Name</th>
+            <th>📅 Uploaded On</th>
+            <th>📦 Size</th>
+            <th>🔧 Action</th>
+          </tr>
+        </thead>
+        <tbody id="fileList">
+          <!-- JS will populate this -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 DataAnalyzer Platform</p>
+  </footer>
+
+  <script src="stored-data.js"></script>
+</body>
+</html>

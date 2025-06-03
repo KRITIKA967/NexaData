@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generate Chart</title>
+  <link rel="stylesheet" href="generate-chart.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+  <div class="nav-container container">
+    <div class="logo">📈 Generate Chart</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="Dashboard.html">Dashboard</a>
+  </div>
+</header>
+
+
+  <!-- Chart Generator Section -->
+  <section class="container section glass-container">
+    <h2 class="section-title">📈 Visualize Your Data</h2>
+    <p class="section-subtitle">Select columns for X and Y axes, choose your preferred chart type (2D or 3D), and instantly generate interactive charts.</p>
+
+    <form id="chartForm" class="chart-form">
+      <div class="form-group">
+        <label for="xAxis">🧭 X-Axis</label>
+        <select id="xAxis" required>
+          <option value="">Select Column</option>
+          <option value="Month">Month</option>
+          <option value="Sales">Sales</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="yAxis">📊 Y-Axis</label>
+        <select id="yAxis" required>
+          <option value="">Select Column</option>
+          <option value="Revenue">Revenue</option>
+          <option value="Profit">Profit</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="chartType">📐 Chart Type</label>
+        <select id="chartType" required>
+          <option value="">Select Chart</option>
+          <option value="bar">Bar Chart (2D)</option>
+          <option value="line">Line Chart (2D)</option>
+          <option value="scatter">Scatter Plot (2D)</option>
+          <option value="3d">3D Column Chart</option>
+        </select>
+      </div>
+
+      <button type="submit" class="action-btn">Generate Chart</button>
+    </form>
+
+    <div id="chartArea" class="chart-area">
+      <!-- Chart will appear here -->
+      <p style="text-align:center; margin-top:30px;">Your generated chart will appear here.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 DataAnalyzer Platform</p>
+  </footer>
+
+ <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const chartForm = document.getElementById('chartForm');
+  const chartArea = document.getElementById('chartArea');
+  let myChart;
+
+  // Sample dummy data for demo — ideally replaced by dynamic/excel data
+  const sampleData = {
+    Month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    Sales: [120, 150, 180, 140, 170, 210],
+    Revenue: [1000, 1150, 1300, 1250, 1400, 1550],
+    Profit: [300, 350, 370, 360, 390, 420]
+  };
+
+  chartForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const xCol = document.getElementById('xAxis').value;
+    const yCol = document.getElementById('yAxis').value;
+    const chartType = document.getElementById('chartType').value;
+
+    if (!xCol || !yCol || !chartType) {
+      alert('Please select X-Axis, Y-Axis, and Chart Type.');
+      return;
+    }
+
+    // Destroy previous chart instance to avoid overlaps
+    if (myChart) {
+      myChart.destroy();
+    }
+
+    // Prepare data arrays from sampleData (replace with real data later)
+    const labels = sampleData[xCol] || [];
+    const dataPoints = sampleData[yCol] || [];
+
+    // Clear chart area & add canvas element
+    chartArea.innerHTML = '<canvas id="chartCanvas"></canvas>';
+    const ctx = document.getElementById('chartCanvas').getContext('2d');
+
+    // Map chartType 3D to bar chart for now (placeholder)
+    const type = chartType === '3d' ? 'bar' : chartType;
+
+    myChart = new Chart(ctx, {
+      type: type,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: `${yCol} vs ${xCol}`,
+          data: dataPoints,
+          backgroundColor: 'rgba(43, 108, 176, 0.7)',
+          borderColor: 'rgba(43, 82, 130, 0.9)',
+          borderWidth: 2,
+          fill: chartType === 'line' ? false : true,
+          pointRadius: chartType === 'scatter' ? 6 : 0
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          duration: 700,
+          easing: 'easeOutQuart'
+        },
+        plugins: {
+          legend: {
+            display: true,
+            labels: {
+              font: { size: 14 },
+              color: '#2b6cb0'
+            }
+          },
+          title: {
+            display: true,
+            text: `${chartType.toUpperCase()} Chart: ${yCol} vs ${xCol}`,
+            font: {
+              size: 20,
+              weight: '700'
+            },
+            color: '#2b6cb0',
+            padding: {
+              top: 10,
+              bottom: 30
+            }
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'nearest',
+            intersect: false,
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: xCol,
+              font: { size: 16, weight: '600' },
+              color: '#2b6cb0'
+            },
+            grid: {
+              color: '#e2e8f0'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: yCol,
+              font: { size: 16, weight: '600' },
+              color: '#2b6cb0'
+            },
+            grid: {
+              color: '#e2e8f0'
+            }
+          }
+        }
+      }
+    });
+  });
+  
+</script>
+<script src="generate-chart.js"></script>
+</body>
+</html>

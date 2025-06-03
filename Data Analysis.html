@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Analysis</title>
+  <link rel="stylesheet" href="Data Analysis.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav-container">
+      <h1 class="logo">📊 DataAnalyzer</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Upload Section -->
+  <section class="container section">
+    <div class="card">
+      <h2>Upload Excel File</h2>
+      <p>Upload your Excel file (.xls or .xlsx) to analyze trends, summaries, and key insights from your data.</p>
+      <input type="file" id="excelUpload" accept=".xls,.xlsx" />
+      <button class="btn" onclick="analyzeData()">Analyze Data</button>
+    </div>
+  </section>
+
+  <!-- Summary Report Section -->
+  <section class="container section">
+    <div class="card summary-card">
+      <h2>📋 Summary Report</h2>
+      <div id="summaryBox" class="summary-content">
+        <p><em>No data analyzed yet. Upload a file to begin!</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 DataAnalyzer Platform</p>
+  </footer>
+
+  <script src="Data Analysis.js"></script>
+</body>
+</html>

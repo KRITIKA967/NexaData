@@ -1,0 +1,75 @@
+🎯 Goal for Frontend Phase:
+Build a responsive and interactive UI that allows users to:
+
+Upload Excel files
+
+View a preview of the data
+
+Select columns for X and Y axes
+
+Choose chart types
+
+Display interactive 2D/3D charts
+
+Show a basic dashboard with upload history (mock data for now)
+
+🧱 Recommended Tech Stack (Frontend Only)
+Feature	Suggested Tech
+UI Framework	HTML + CSS + JavaScript (or React.js for better structure)
+Charting Library	Chart.js or Plotly.js (supports 2D & 3D)
+Excel File Reader	SheetJS (JavaScript library to parse Excel files)
+State Management	React state/hooks (if using React)
+Styling	Tailwind CSS / Bootstrap / Custom CSS
+
+🖥️ Suggested Pages/Components
+Homepage
+
+Intro + Upload Excel file button
+
+Upload & Preview
+
+File input
+
+Data table preview after file upload (using SheetJS)
+
+Dropdowns for selecting X and Y axes from columns
+
+Chart type selector
+
+Chart Display
+
+Interactive chart area (using Plotly.js or Chart.js)
+
+Download chart button (PNG/SVG)
+
+User Dashboard (Frontend Mock)
+
+List of uploaded files (use local storage or dummy data)
+
+Show previous chart previews (optional)
+
+📂 Folder Structure (React Example)
+pgsql
+Copy
+Edit
+excel-analyzer-frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── FileUploader.jsx
+│   │   ├── DataPreview.jsx
+│   │   ├── ChartRenderer.jsx
+│   │   └── Dashboard.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── Upload.jsx
+│   ├── App.jsx
+│   └── index.js
+├── package.json
+└── README.md
+📌 Tips While Building Frontend
+Use SheetJS (xlsx) to read Excel files client-side.
+
+Plotly.js allows 2D & 3D charts with great interactivity.
+
+Save upload history in localStorage (temporary, for frontend mock).

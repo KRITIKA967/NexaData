@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📄 Download/View Report</title>
+  <link rel="stylesheet" href="report.css" />
+  <script defer src="report.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container container">
+      <div class="logo">📄 Download/View Report</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="Data Analysis.html">Data Analysis</a>
+        <a href="Dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <section class="section container">
+    <div class="card summary-card">
+      <h2>📥 Your Reports</h2>
+      <p>Generate downloadable graphs and smart summary reports with AI insights for your uploaded data.</p>
+
+      <div class="report-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Report Name</th>
+              <th>Date</th>
+              <th>Download</th>
+              <th>AI Summary</th>
+            </tr>
+          </thead>
+          <tbody id="reportBody">
+            <!-- Rows added dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

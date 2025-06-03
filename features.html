@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Analyzer Dashboard</title>
+  <link rel="stylesheet" href="features.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <h1>📊 Data Analyzer Dashboard</h1>
+
+    <!-- 1. Upload File -->
+    <section class="card">
+      <h2>1. Upload Excel File</h2>
+      <input type="file" id="fileInput" accept=".xls,.xlsx" />
+      <p id="uploadStatus"></p>
+    </section>
+
+    <!-- 2. Generate Chart -->
+    <section class="card">
+      <h2>2. Generate Chart</h2>
+      <p>Choose X and Y axes from your data:</p>
+      <select id="xAxisSelect"><option>Select X-Axis</option></select>
+      <select id="yAxisSelect"><option>Select Y-Axis</option></select>
+      <button onclick="generateChart()">Generate Chart</button>
+      <canvas id="chartCanvas" width="400" height="250"></canvas>
+    </section>
+
+    <!-- 3. Uploaded Files -->
+    <section class="card">
+      <h2>3. Uploaded Files</h2>
+      <ul id="uploadedList">
+        <li>No files uploaded yet.</li>
+      </ul>
+    </section>
+
+    <!-- 4. Summary Report -->
+    <section class="card">
+      <h2>4. Summary Report</h2>
+      <p id="summary">Upload a file to see AI-generated summaries here.</p>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="features.js"></script>
+</body>
+</html>
