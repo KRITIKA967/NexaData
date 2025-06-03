@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | Data Nest</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #4e54c8, #8f94fb);
+      font-family: "Segoe UI", sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .welcome-box {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .enter-btn {
+      background: #fff;
+      color: #4e54c8;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .enter-btn:hover {
+      background: #e0e0e0;
+    }
+
+    /* Optional image logo */
+    .image-logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome-box">
+    <!-- Option 1: Emoji Logo -->
+    <img src="https://i.pinimg.com/736x/c4/fc/ab/c4fcab073fe2bee9866a8163bfcd3b57.jpg" alt="Aegis Admin Logo" class="image-logo">
+
+    <!-- Option 2: Image Logo -->
+    <!-- <img src="logo.png" alt="Logo" class="image-logo"> -->
+
+    <h1>Nexa Data</h1>
+    <p>Inspired by AI and smart data storage.</p>
+    <a class="enter-btn" href="login.html">Enter Login Page</a>
+  </div>
+
+</body>
+</html>
